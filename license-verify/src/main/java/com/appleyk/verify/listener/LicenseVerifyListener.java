@@ -37,6 +37,7 @@ public class LicenseVerifyListener implements ApplicationListener<ContextRefresh
 
     @Override
     public void onApplicationEvent(ContextRefreshedEvent event) {
+        LoggerHelper.info("properties.getLicensePath():" + properties.getLicensePath());
         if(CommonUtils.isNotEmpty(properties.getLicensePath())){
             install();
             try{
@@ -74,6 +75,7 @@ public class LicenseVerifyListener implements ApplicationListener<ContextRefresh
             LoggerHelper.info("++++++++ 证书安装成功 ++++++++");
         }else{
             LoggerHelper.info("++++++++ 证书安装失败 ++++++++");
+            System.exit(-1);
         }
     }
 
