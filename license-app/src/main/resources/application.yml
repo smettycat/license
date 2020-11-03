@@ -1,7 +1,10 @@
-server.port=8080
-
 #激活creator配置类
 #spring.profiles.active = creator
 
+server:
+  port: 8080
+
 #激活verify配置类
-spring.profiles.active = verify
+spring:
+  profiles:
+    active: creator

@@ -1,0 +1,42 @@
+
+#================License Creator 证书生成配置类===============#
+
+#License文件自动生成时的临时路径(请注意Windows、Linux、Mac系统的路径区分)
+#springboot.license.generate.tempPath=/data/license/
+
+#License文件所在的服务器请求下载地址的前缀
+springboot:
+  license:
+    server:
+      prefix: http://localhost:8080/license/
+
+#================License Creator 证书生成配置类===============#
+
+#配置数据源
+spring:
+  datasource:
+    druid:
+      db-type: com.alibaba.druid.pool.DruidDataSource
+      driverClassName: net.sf.log4jdbc.sql.jdbcapi.DriverSpy
+      url: jdbc:log4jdbc:mysql://120.77.253.8:3306/license?serverTimezone=Asia/Shanghai&characterEncoding=utf8&useSSL=false
+      username: root
+      password: XiaoP@123
+      initial-size: 3
+      min-idle: 3
+      max-active: 15
+      max-wait: 5000
+      time-between-eviction-runs-millis: 90000
+      min-evictable-idle-time-millis: 1800000
+      test-while-idle: true
+      test-on-borrow: false
+      test-on-return: false
+      validation-query: select 1
+
+#mybatis的相关配置
+mybatis:
+  #mapper配置文件
+  mapper-locations: classpath:mapper/*.xml
+  type-aliases-package: com.appleyk.core.entity
+  #开启驼峰命名
+  configuration:
+    map-underscore-to-camel-case: true

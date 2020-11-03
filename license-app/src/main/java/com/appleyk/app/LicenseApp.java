@@ -1,9 +1,11 @@
 package com.appleyk.app;
 
+import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
+import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 /**
  * <p>SpringBoot启动类</p>
@@ -14,6 +16,8 @@ import org.springframework.boot.web.servlet.support.SpringBootServletInitializer
  * @date created on 10:24 下午 2020/8/21
  */
 @SpringBootApplication
+@EnableTransactionManagement
+@MapperScan("com.appleyk.core.mapper")
 public class LicenseApp extends SpringBootServletInitializer {
 
     public static void main(String[] args) {

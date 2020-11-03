@@ -1,0 +1,9 @@
+springboot:
+  license:
+    verify:
+      subject: landi
+      publicAlias: publiccert
+      publicKeysStorePath: /publicCerts.store
+      storePass: 123456a
+      licensePath: classpath:license.lic
+
